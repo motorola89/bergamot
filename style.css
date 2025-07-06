@@ -176,6 +176,14 @@ body {
   box-shadow: 0 4px 24px rgba(0,0,0,0.13);
   object-fit: cover;
 }
+
+/* Оптимизация изображений для разных устройств */
+@media (max-width: 1200px) {
+  .home-image img {
+    width: 400px;
+  }
+}
+
 @media (max-width: 800px) {
   .home-content {
     flex-direction: column;
@@ -183,6 +191,23 @@ body {
   }
   .home-image img {
     margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+  }
+  .home-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-image img {
+    max-width: 280px;
+  }
+  .logo-text {
+    font-size: 2.2em;
+  }
+  .nav-toggle {
+    font-size: 1.8rem;
   }
 }
 .about-content {
@@ -528,6 +553,14 @@ body {
   .about-content, .contacts-content, .events-content { flex-direction: column; gap: 18px; }
   .footer { font-size: 1rem; }
   .to-top { position: static; display: block; margin: 12px auto 0 auto; }
+  .home-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+  .home-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 /* Home background full stretch */
 .home-bg {
@@ -664,4 +697,104 @@ body {
 .main-booking-popup.show .main-booking-popup-content {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .about-team img {
+    width: 100px;
+    height: 100px;
+  }
+  .menu-filters {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .filter-btn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+  .menu-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .menu-item img {
+    height: 160px;
+  }
+  .gallery-viewport {
+    height: 50vh;
+    min-height: 250px;
+  }
+  .slide img {
+    max-height: 50vh;
+  }
+  .gallery-controls button {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  .event-block {
+    padding: 20px 24px;
+    min-width: auto;
+    max-width: none;
+  }
+  .contacts-map iframe {
+    height: 200px;
+  }
+  .contacts-form {
+    margin-top: 20px;
+  }
+  .contacts-form input, .contacts-form textarea {
+    font-size: 16px; /* Предотвращает зум на iOS */
+  }
+  .booking-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .booking-form input, .booking-form button {
+    font-size: 16px; /* Предотвращает зум на iOS */
+    padding: 14px 16px;
+  }
+  .booking-popup-content {
+    padding: 24px 20px 20px 20px;
+    min-width: 280px;
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+  .section h2 {
+    font-size: 1.3rem;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .event-block {
+    padding: 16px 20px;
+  }
+  .menu-item img {
+    height: 140px;
+  }
+  .about-team img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .menu-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .home-image img {
+    width: 350px;
+  }
+  .event-block {
+    min-width: 220px;
+    max-width: 300px;
+  }
+  .contacts-content {
+    gap: 30px;
+  }
 } 
