@@ -33,7 +33,7 @@
           <h1>Добро пожаловать в <span>Бергамот</span></h1>
           <p>Ресторан, где каждая деталь создана для вашего удовольствия. Насладитесь авторской кухней, приготовленной с любовью из лучших продуктов, и проведите время в уютной атмосфере.</p>
           <div class="home-buttons">
-            
+            <button class="btn" id="bookTableBtn">Забронировать столик</button>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
           </div>
           <div class="about-team">
             <img src="pictures/шеф.jpg" alt="Шеф-повар">
-            <span>Шеф-повар Юлия Викторовна</span>
+            <span>Бренд-шеф Юлия Викторовна</span>
             <img src="pictures/команда.jpg" alt="Команда ресторана">
             <span>Наша команда</span>
           </div>
@@ -64,6 +64,8 @@
           <button class="filter-btn" data-filter="main">Основные блюда</button>
           <button class="filter-btn" data-filter="dessert">Десерты</button>
           <button class="filter-btn" data-filter="drinks">Напитки</button>
+          <button class="filter-btn" data-filter="banquet">Банкетное меню</button>
+          <button class="filter-btn" data-filter="catering">Кейтеринг</button>
         </div>
         <div class="menu-list" id="menuList">
           <div class="menu-item" data-category="main">
@@ -146,6 +148,46 @@
               </div>
             </div>
           </div>
+          <div class="menu-item" data-category="banquet">
+            <img src="pictures/блюдо1.jpg" alt="Банкетное блюдо 1">
+            <div class="menu-info">
+              <h3>Банкетное блюдо</h3>
+              <div class="menu-desc-row">
+                <span>Специальное блюдо для банкетов.</span>
+                <span class="price">850 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item" data-category="banquet">
+            <img src="pictures/блюдо1.jpg" alt="Банкетное блюдо 2">
+            <div class="menu-info">
+              <h3>Банкетное блюдо</h3>
+              <div class="menu-desc-row">
+                <span>Специальное блюдо для банкетов.</span>
+                <span class="price">850 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item" data-category="catering">
+            <img src="pictures/блюдо1.jpg" alt="Кейтеринг блюдо 1">
+            <div class="menu-info">
+              <h3>Кейтеринг блюдо</h3>
+              <div class="menu-desc-row">
+                <span>Блюдо для кейтеринга.</span>
+                <span class="price">750 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item" data-category="catering">
+            <img src="pictures/блюдо1.jpg" alt="Кейтеринг блюдо 2">
+            <div class="menu-info">
+              <h3>Кейтеринг блюдо</h3>
+              <div class="menu-desc-row">
+                <span>Блюдо для кейтеринга.</span>
+                <span class="price">750 ₽</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -153,9 +195,9 @@
       <div class="container">
         <h2>Бронирование</h2>
         <form class="booking-form" id="bookingForm">
-          <input type="date" name="date" required>
-          <input type="time" name="time" required>
-          <input type="number" name="guests" min="1" max="20" placeholder="Гостей" required>
+          <input type="date" name="date" min="" required>
+          <input type="time" name="time" min="10:00" max="21:30" required>
+          <input type="number" name="guests" min="1" max="100" placeholder="Гостей" required>
           <input type="text" name="wishes" placeholder="Особые пожелания">
           <button type="submit" class="btn">Отправить</button>
         </form>
@@ -199,6 +241,10 @@
             <h3>Специальные предложения</h3>
             <p>Уникальные форматы для любого события. Свяжитесь с нами для обсуждения деталей.</p>
           </div>
+          <div class="event-block">
+            <h3>Кейтеринг</h3>
+            <p>Доставка блюд и организация питания на вашем мероприятии. Мы привезем вкусную еду и профессиональное обслуживание прямо к вам.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -231,19 +277,30 @@
         </div>
       </div>
     </section>
-    <!-- Popup booking form (главная) -->
     
   </main>
+  
+  <!-- Модальное окно для бронирования -->
+  <div class="booking-popup" id="bookingPopup">
+    <div class="booking-popup-content">
+      <button class="close-popup" id="closeBookingPopup">&times;</button>
+      <h2>Бронирование столика</h2>
+      <form class="booking-form" id="popupBookingForm">
+        <input type="date" name="date" min="" required>
+        <input type="time" name="time" min="10:00" max="21:30" required>
+        <input type="number" name="guests" min="1" max="100" placeholder="Гостей" required>
+        <input type="text" name="wishes" placeholder="Особые пожелания">
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+    </div>
+  </div>
+  
   <footer class="footer">
     <div class="container">
       <p>© 2025 Ресторан "Бергамот". Все права защищены.</p>
       <a href="#home" class="to-top" id="toTop">Наверх ↑</a>
     </div>
   </footer>
-  <div class="cookie-banner" id="cookieBanner">
-    <span>Этот сайт использует cookie для хранения данных. Продолжая использовать сайт, вы даете согласие на работу с этими файлами.</span>
-    <button id="cookieOk">OK</button>
-  </div>
   <script src="script.js"></script>
 </body>
 </html> 

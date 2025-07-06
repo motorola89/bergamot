@@ -53,7 +53,6 @@ body {
   display: inline-block;
 }
 .logo-text:hover {
-  transform: scale(1.06) rotate(-2deg);
   text-shadow: 0 2px 16px #e7c87388;
 }
 .nav {
@@ -432,6 +431,7 @@ body {
   background-color: var(--beige);
   transition: background var(--transition);
   overflow: hidden;
+  border: 2px solid var(--accent);
 }
 .social svg {
   width: 60%;
@@ -441,7 +441,10 @@ body {
 .social.instagram { background-image: none; }
 .social.vk { background-image: none; }
 .social.telegram { background-image: none; }
-.social:hover { background-color: var(--accent); }
+.social:hover { 
+  background-color: var(--accent); 
+  transform: scale(1.1);
+}
 .contacts-map iframe {
   border-radius: var(--radius);
   border: 2px solid var(--accent);
@@ -517,24 +520,7 @@ body {
   background: var(--accent);
   color: var(--text-dark);
 }
-.cookie-banner {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  background: var(--beige);
-  color: var(--text-dark);
-  padding: 18px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  z-index: 200;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
-  font-size: 1rem;
-  transition: transform var(--transition);
-}
-.cookie-banner.hide {
-  transform: translateY(100%);
-}
+
 @media (max-width: 700px) {
   .section { padding: 36px 0 24px 0; }
   .home-text h1 { font-size: 2rem; }
@@ -545,7 +531,7 @@ body {
 }
 /* Home background full stretch */
 .home-bg {
-  background-image: url('pictures/restoran.png');
+  background-image: url('pictures/ресторация.png');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
